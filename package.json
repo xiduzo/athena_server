@@ -1,0 +1,47 @@
+{
+  "name": "athena_graphql",
+  "version": "1.0.0",
+  "description": "graphql server for athena",
+  "main": "server.js",
+  "author": "Xiduzo",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --inspect=5858 -r ts-node/register ./src/server.ts",
+    "start:watch": "nodemon",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.11.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "neo4j-graphql-js": "^2.13.0",
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.3.8",
+    "@types/node": "^13.9.1",
+    "@types/superagent": "^4.1.7",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
+  }
+}
