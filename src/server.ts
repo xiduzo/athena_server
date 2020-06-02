@@ -1,6 +1,6 @@
 import { ApolloServer } from 'apollo-server-express'
-import * as dotenv from 'dotenv'
-import * as express from 'express'
+import dotenv from 'dotenv'
+import express from 'express'
 import neo4j from 'neo4j-driver'
 // @ts-ignore
 import { makeAugmentedSchema } from 'neo4j-graphql-js'
@@ -13,7 +13,7 @@ import { CreatedAtDirective } from './directives/CreatedAtDirective'
 // Make sure we can use process.env variables
 dotenv.config()
 
-const driver = neo4j.driver('bolt://localhost:7687', neo4j.auth.basic('athena', 'bierislekker'))
+const driver = neo4j.driver('bolt://localhost:7687', neo4j.auth.basic('neo4j', 'test'))
 
 const schema = makeAugmentedSchema({
   typeDefs,

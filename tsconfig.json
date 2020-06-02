@@ -6,6 +6,7 @@
         "strict": true,
         "target": "es6",
         "module": "commonjs",
+        "esModuleInterop": true,
         "outDir": "dist",
         "sourceMap": true,
         "baseUrl": "./",

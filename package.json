@@ -16,7 +16,9 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.6.0",
+    "graphql-tools": "^6.0.6",
     "jsonwebtoken": "^8.5.1",
+    "neo4j-driver": "^4.0.2",
     "neo4j-graphql-js": "^2.13.0",
     "superagent": "^5.2.2"
   },
