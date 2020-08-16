@@ -19,8 +19,8 @@ export const typeDefs = `
   }
 
   type DateRange {
-    start: String!
-    end: String!
+    start: Date!
+    end: Date!
   }
 
   type User {
@@ -68,8 +68,8 @@ export const typeDefs = `
     name: String!
     squads: [Squad] @relation(name: "IS_PART_OF", direction: "IN")
     leaders: [User] @relation(name: "IS_LEADER_OF", direction: "IN")
-    start: String
-    end: String
+    start: Date!
+    end: Date!
     breaks: [DateRange]
   }
 `

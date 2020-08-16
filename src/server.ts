@@ -4,26 +4,18 @@ import express from 'express'
 import neo4j from 'neo4j-driver'
 // @ts-ignore
 import { makeAugmentedSchema } from 'neo4j-graphql-js'
-import { HasRoleDirective } from './directives/HasRoleDirective'
-import { HasScopeDirective } from './directives/HasScopeDirective'
-import { IsAuthenticatedDirective } from './directives/IsAuthenticatedDirective'
 import { typeDefs } from './types'
-import { CreatedAtDirective } from './directives/CreatedAtDirective'
+import { schemaDirectives } from './directives'
 
 // Make sure we can use process.env variables
 dotenv.config()
 
-const driver = neo4j.driver('bolt://localhost:7687', neo4j.auth.basic('neo4j', 'test'))
+const driver = neo4j.driver('bolt://localhost:7687', neo4j.auth.basic('bigd', 'bierislekker'))
 
 const schema = makeAugmentedSchema({
   typeDefs,
   logger: { log: (e: any) => console.log(e) },
-  schemaDirectives: {
-    isAuthenticated: IsAuthenticatedDirective,
-    hasRole: HasRoleDirective,
-    hasScope: HasScopeDirective,
-    createdAt: CreatedAtDirective,
-  },
+  schemaDirectives
 })
 
 const server = new ApolloServer({
